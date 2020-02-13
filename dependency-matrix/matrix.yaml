@@ -5,3 +5,9 @@ dependencies:
   url: https://github.com/yogeshkd786/testgo1.git
   version: ""
   versionURL: ""
+- host: github.com
+  owner: yogeshcicd
+  repo: testrepo1
+  url: https://github.com/yogeshcicd/testrepo1.git
+  version: ""
+  versionURL: ""

@@ -1,0 +1,21 @@
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  creationTimestamp: null
+  labels:
+    owner: yogeshcicd
+    provider: github
+    repository: testrepo1
+  name: yogeshcicd-testrepo1
+spec:
+  description: Imported application for yogeshcicd/testrepo1
+  httpCloneURL: https://github.com/yogeshcicd/testrepo1.git
+  org: yogeshcicd
+  provider: https://github.com
+  providerKind: github
+  providerName: github
+  repo: testrepo1
+  scheduler:
+    kind: ""
+    name: ""
+  url: https://github.com/yogeshcicd/testrepo1.git
