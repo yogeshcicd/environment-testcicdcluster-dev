@@ -1,38 +1,83 @@
 autoUpdate:
   enabled: false
   schedule: ""
+bootConfigURL: https://github.com/cloudbees/cloudbees-jenkins-x-boot-config
 cluster:
-  clusterName: ""
-  environmentGitOwner: ""
-  environmentGitPublic: true
-  project: ""
   azure: {}
+  clusterName: testcicdcluster
+  devEnvApprovers:
+  - yogeshcicd
+  - yogeshkd786
+  - organicworldbot
+  environmentGitOwner: yogeshcicd
+  environmentGitPublic: true
+  gitKind: github
+  gitName: github
+  gitServer: https://github.com
+  namespace: jx
+  project: aliz-tiket-sandbox
   provider: gke
-  zone: ""
-gitops: true
+  registry: gcr.io
+  zone: asia-southeast1-a
 environments:
-  - key: dev
-  - key: staging
-  - key: production
+- ingress:
+    cloud_dns_secret_name: external-dns-gcp-sa
+    domain: testcicdcluster.organicworld.page
+    externalDNS: true
+    namespaceSubDomain: -jx.
+    tls:
+      email: yogeshkad@oraganicworld.page
+      enabled: false
+      production: false
+  key: dev
+- ingress:
+    domain: ""
+    externalDNS: false
+    namespaceSubDomain: ""
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  key: staging
+- ingress:
+    domain: ""
+    externalDNS: false
+    namespaceSubDomain: ""
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  key: production
+gitops: true
 ingress:
-  domain: ""
-  externalDNS: false
+  cloud_dns_secret_name: external-dns-gcp-sa
+  domain: testcicdcluster.organicworld.page
+  externalDNS: true
+  namespaceSubDomain: -jx.
   tls:
-    email: ""
+    email: yogeshkad@oraganicworld.page
     enabled: false
     production: false
 kaniko: true
+repository: nexus
 secretStorage: vault
 storage:
+  backup:
+    enabled: false
+    url: ""
   logs:
     enabled: true
-    url: ""
+    url: gs://testcicdcluster-logs-1e51087e-f673-4fe2-96a1-8804a5d7ef
   reports:
     enabled: true
-    url: ""
+    url: gs://testcicdcluster-reports-958b715d-e2d1-4ba0-ab24-7d8ad09
   repository:
     enabled: true
-    url: ""
+    url: gs://testcicdcluster-repository-359f0e21-d656-4f91-a457-eae5
+vault: {}
+velero:
+  schedule: ""
+  ttl: ""
 versionStream:
   ref: 2.0.1139+cjxd.6
   url: https://github.com/cloudbees/cloudbees-jenkins-x-versions.git

@@ -1,0 +1,10 @@
+adminUser:
+  password: vault:testcicdcluster/adminUser:password
+  username: admin
+enableDocker: false
+pipelineUser:
+  email: yogeshkad786@hotmail.com
+  token: vault:testcicdcluster/pipelineUser:token
+  username: organicworldbot
+prow:
+  hmacToken: vault:testcicdcluster/prow:hmacToken
