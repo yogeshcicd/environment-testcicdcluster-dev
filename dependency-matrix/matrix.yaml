@@ -1,0 +1,7 @@
+dependencies:
+- host: github.com
+  owner: yogeshkd786
+  repo: testgo1
+  url: https://github.com/yogeshkd786/testgo1.git
+  version: ""
+  versionURL: ""
